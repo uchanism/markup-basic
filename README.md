@@ -1,7 +1,7 @@
 # Markup Languages Basic (HTML/CSS) #
 
 1. [HTML](#html)
-    1. [DTD <sub>Document Type Declaration</sub>](#dtd)
+    1. [DTD <sub>Document Type Definition</sub>](#dtd)
     2. [Attribute](#attribute)
     3. [Encoding](#encoding)
     4. [Metadata](#metadata)
