@@ -154,6 +154,81 @@ Strict에서 폐기된 몇 가지 태그를 허용한다.
 <h3 id="attribute">Attribute</h3>
 <h3 id="encoding">Encoding</h3>
 <h3 id="metadata">Metadata</h3>
+
+* 웹 제작 정보 및 문서 내용의 정보 제공
+* 검색 엔진에게 웹 페이지의 정보 제공
+
+metadata: meta 요소는 페이지 정보, 키워드 같이 다른 메타 관련 요소들(`<base>`, `<link>`, `<script>`, `<style>`, `<title>`)로 표현할 수 없는 메타정보를 기술하는데 사용된다. 크게 두가지 용도로 사용될 수 있는데, HTML 문서에 추가적인 메타정보를 기술하기 위해 사용되기도 하며, THML 응답 헤더를 에뮬레이트하기 위해 사용되기도 한다.
+
+<h4>마크업 규칙</h4>
+
+* `name` 속성, `http-equiv` 속성, `charset` 속성 중 하나를 반드시 써야 합니다.
+* `name` 속성이나 `http-equiv`속성을 썼다면 `content` 속성도 써야 합니다. 아니라면, 반드시 생략해야 합니다.
+* `http-equiv`속성을 썼다면 meta 요소는 반드시 head 요소 내에 써야합니다. `http-equiv`속성이 없는 meta 요소는 head 요소 또는 head 요소의 자식 요소인 noscirpt 요소 내부에 써야 합니다.
+
+기본 문법은 다음과 같습니다.
+
+``` html
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="honggil-dong">
+    </head>
+```
+
+<h4>속성</h4>
+<dl>
+    <dt>
+        <a href="http://html5ref.clearboth.org/doku.php?id=html5:attribute:name_meta">name</a>
+    </dt>
+    <dd>
+        문서의 메타데이터를 설정합니다.
+    </dd>
+    <dt>
+        <a href="http://html5ref.clearboth.org/doku.php?id=html5:attribute:http-equiv_meta">http-equiv</a>
+    </dt>
+    <dd>
+        전처리구문 지시자입니다.
+    </dd>
+    <dt>
+        <a href="http://html5ref.clearboth.org/doku.php?id=html5:attribute:content_meta">content</a>
+    </dt>
+    <dd>
+        name 속성이나 http-equiv 속성을 썼을 때, 이 속성의 의미는 때에 따라 다릅니다.
+    </dd>
+    <dt>
+        <a href="http://html5ref.clearboth.org/doku.php?id=html5:attribute:charset_meta">charset</a>
+    </dt>
+    <dd>
+        문서에서 사용하는 문자 인코딩 방식을 명시합니다. XML은 반드시 UTF-8을 써야 합니다.
+    </dd>
+</dl>
+
+<h5>name 속성 - viewport</h5>
+
+초기 viewport 크기 설정에 관한 힌트를 제공합니다. 이 속성은 몇 개의 모바일 디바이스에 의해서만 사용됩니다.
+
+<a href="https://developer.mozilla.org/ko/docs/Mozilla/Mobile/Viewport_meta_tag">viewport meta 태그를 이용해 모바일 브라우저상에서 레이아웃 조종하는 법</a>
+        
+    
+<em> `<meta name="viewport">` 에 들어가는 content 속성 값들</em><br>
+        
+|값   |가능한 값들   |설명   |
+|---|---|---|
+|`width`   |양수 값 또는 device-width 리터럴 값   |viewport의 width를 픽셀 값으로 정의한다.   |
+|`height`   |양수 값 또는 device-height 리터럴 값   |viewport의 height를 픽셀 값으로 정의한다.   |
+|`intial-scale`   |0.0 ~ 10.0 중의 한 값   |device width (portrait 모드에서의 `device-width`와 landscape 모드에서 `device-height`)와 viewport 사이즈 간의 비율을 정의한다.   |
+|`maximum-scale`   |0.0 ~ 10.0 중의 한 값   |zoom의 최대치를 정의한다. 이 값은 `minimum-scale`보다 크거나 같아야 하고, bebabior가 정의되지 않아야 한다.   |
+|`minimum-scale`   |0.0 ~ 10.0 중의 한 값   |zoom의 최소치를 정의한다. 이 값은 `minimum-scale`보다 크거나 같아야 하고, bebabior가 정의되지 않아야 한다.   |
+|`user-scalable`   |boolean 값 (yes or no)   |no로 설정되면, 사용자는 웹 페이지에서 줌으로 사용할 수 없다. Default 값은 yes   |
+
+<em>기본 문법</em><br>
+
+``` html
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+```
+   
+
 <h3 id="title">Title</h3>
 <h3 id="elements">Elements</h3>
 <h4><a href="https://developer.mozilla.org/ko/docs/HTML/Block-level_elements">블록 요소</a></h4>
