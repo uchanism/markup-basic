@@ -219,6 +219,54 @@ HTML에서, 이 글자들이 일으키는 다양한 효과들은, 대게 한개�
 이 것은 처음 HTML 문서를 작성하려고 하는 사람에게 혼란을 낳는다. 들여쓰기를 좀 더 하려고 하거나, 문장 사이에 공백을 더 넣으려고 하거나, 문장 사이에 공백을 더 넣으려고 할 때 말이다. 문서의 외양을 바꾸는 것은 HTML로 하는 게 아니다. 그건 스타일 시트를 통해서 하는 것이다.
 <h2 id="css">CSS</h2>
 <h3 id="boxModel">Box Model</h3>
+
+문서에서, 각 요소(element)는 사각형 박스로 나타냅니다. 이 박스의 크기, 특성(색, 배경, 테두리 모양 등) 및 위치 결정이 렌더링 엔진의 목적입니다.
+
+CSS에서, 이 사각형 박스 각각은 표준 박스 모델을 사용하여 기술됩니다. 이 모델은 요소에 의해 차지되는 공간의 내용(content)을 설명합니다. 각 박스는 네 경계(edge)가 있습니다. (`margin` 경계, `border` 경계, `padding` 경계, `content` 경계)
+
+<dl>
+    <dt>영역 크기 계산식</dt>
+    <dd>margin + border + padding + (width || height)</dd>
+</dl>
+
+<img src="img_boxmodel.png" alt="CSS Box Model" />
+
+<h4>요소</h4>
+<dl>
+    <dt>content 영역</dt>
+    <dd>
+        요소의 실제 내용을 포함하는 영역입니다. 거기에는 대개 배경, 색, 또는 이미지(그 순서로, 배경색을 감추는 불투명한 이미지)가 있고 content 경계 안쪽에 놓입니다. 따라서 그 크기(dimensions)는 content 너비(또는 content 박스 너비) 및 content 높이(또는 content 박스 높이) 입니다.<br><br>
+        CSS <code>box-sizing</code> 속성이 기본(default)으로 설정된 경우, CSS 속성 <code>width</code>, <code>min-width</code>, <code>max-width</code>, <code>height</code>, <code>min-height</code> 및 <code>max-height</code>가 content 크기를 제어합니다.
+    </dd>
+    <dt>padding 영역</dt>
+    <dd>
+        패딩을 둘러싼 보더까지 미칩니다. content 영역이 배경, 색 또는 그 위에 설정된 이미지가 있을 때, 이는 패딩까지 이어집니다. 이것이 패딩을 content의 연장으로 생각할 수 있는 이유 입니다. 패딩은 padding 경계 안쪽에 놓이고 그 크기는 padding 박스 너비 및 padding 박스 높이입니다.<br><br>
+        패딩과 content 경계 사이의 공간은 <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code> 및 단축(shorthand) CSS 속성 <code>padding</code>으로 제어될 수 있습니다.
+    </dd>
+    <dt>border 영역</dt>
+    <dd>
+        padding 영역을 보더를 포함하는 영역까지 확장합니다. 이는 border 경계 안쪽 영역이고 그 크기는 <code>border-box</code> 너비 및 <code>border-box</code> 높이입니다. 이 영역은 <code>border-width</code> 속성 또는 단축 <code>border</code>에 의해 정의된 보더의 크기에 의존합니다.
+    </dd>
+    <dt>margin 영역</dt>
+    <dd>
+        border 영역을 요소를 그 이웃과 구별하기 위해 쓰이는 빈 영역으로 확장합니다. 이는 margin 경계 안쪽 영역이고 그 크기는 margin 박스 너비 및 margin 박스 높이 입니다.<br><br>
+        margin 영역의 크기는 <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code> 및 단축 CSS 속성 margin으로 제어됩니다.
+    </dd>
+    <dd>
+        margin collapsing이 일어날 때, margin 영역은 마진이 박스 간에 공유되기 때문에 분명히 정의 되지 않습니다.
+    </dd>
+    <dd>
+        비대체(non-replaced) 인라인 요소의 경우 차지하는 공간의 양(줄높이(행간)에 기여)은 비록 보더 및 패딩이 content 주위에 눈에 <code>line-height</code> 속성에 의해 결정됨을 주의하세요
+    </dd>
+</dl>
+
+<h4><a href="https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">margin collapsing (margin 결합 현상)</a></h4>
+
+블록의 top 및 bottom 마진은 때로는 (결합되는 마진중 크기가) 가장 큰 한 마진으로 결합(combine, 상쇄(collased))됩니다.
+
+음수 마진이 포함되는 경우는, 상쇄된 마진의 크기는 제일 큰 양수 마진과 제일 작은(절대값이 가장 큰) 음수 마진의 합입니다.
+
+부동(floating) 요소 및 절대 위치지정된(absolutely positioned) 요소의 마진은 상쇄하지 않습니다.
 <h3 id="property">Property</h3>
 <h3 id="mediaQuery">Media Query</h3>
 <h3 id="normalize">Normalize (reset.css)</h3>
