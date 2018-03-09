@@ -304,7 +304,7 @@ CSS에서, 이 사각형 박스 각각은 표준 박스 모델을 사용하여 �
     <dd>margin + border + padding + (width || height)</dd>
 </dl>
 
-<img src="img_boxmodel.png" alt="CSS Box Model" />
+<img src="images/img_boxmodel.png" alt="CSS Box Model" />
 
 <h4>요소</h4>
 <dl>
