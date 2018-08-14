@@ -2,20 +2,10 @@
 
 1. [HTML](#html)
     1. [DTD <sub>Document Type Definition</sub>](#dtd)
-    2. [Attribute](#attribute)
-    3. [Encoding](#encoding)
-    4. [Metadata](#metadata)
-    5. [Title](#title)
-    6. [Elements](#elements)
+    2. [Metadata](#metadata)
+    3. [Elements](#elements)
 2. [CSS](#css)
     1. [Box Model](#boxModel)
-    2. [Property](#property)
-    3. [Media Query](#mediaQuery)
-    4. [Normalize (reset.css)](#normalize)    
-3. [Example](#example)
-    * [레이아웃](#layout)
-    * [가로,세로 중앙정렬](#align)
-    * [말줄임](#ellipsis)
 
 <h2 id="html">HTML</h2>
 <h3 id="dtd">DTD <sub>Document Type Definition</sub></h3>
@@ -151,8 +141,6 @@ Strict에서 폐기된 몇 가지 태그를 허용한다.
 * 인터넷 익스프로러의 경우, DOCTYPE 선언 윗쪽에 주석이나 다른 문자가 들어갔을때 문서를 쿼크모드로 해석한다.
 
 
-<h3 id="attribute">Attribute</h3>
-<h3 id="encoding">Encoding</h3>
 <h3 id="metadata">Metadata</h3>
 
 * 웹 제작 정보 및 문서 내용의 정보 제공
@@ -228,8 +216,6 @@ metadata: meta 요소는 페이지 정보, 키워드 같이 다른 메타 관련
     <meta name="viewport" content="width=device-width, user-scalable=no">
 ```
    
-
-<h3 id="title">Title</h3>
 <h3 id="elements">Elements</h3>
 <h4><a href="https://developer.mozilla.org/ko/docs/HTML/Block-level_elements">블록 요소</a></h4>
 
@@ -342,11 +328,3 @@ CSS에서, 이 사각형 박스 각각은 표준 박스 모델을 사용하여 �
 음수 마진이 포함되는 경우는, 상쇄된 마진의 크기는 제일 큰 양수 마진과 제일 작은(절대값이 가장 큰) 음수 마진의 합입니다.
 
 부동(floating) 요소 및 절대 위치지정된(absolutely positioned) 요소의 마진은 상쇄하지 않습니다.
-<h3 id="property">Property</h3>
-<h3 id="mediaQuery">Media Query</h3>
-<h3 id="normalize">Normalize (reset.css)</h3>
-
-<h2 id="example">Example</h2>
-<h3 id="layout">레이아웃</h3>
-<h3 id="aling">가로,세로 중앙정렬</h3>
-<h3 id="ellipsis">말줄임</h3>
