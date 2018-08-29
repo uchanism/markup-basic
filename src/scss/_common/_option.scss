@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* Font style setting */
+$noto: Noto Sans KR, sans-serif;
+$malgun: 'Malgun Gothic', '맑은 고딕', sans-serif;
+
+/* Point color setting */
+$black : #000;
+
+$white : #fff;
+
+$gray1 : #333;
+
+/* Background - color setting */
+$bg-black : $black;
+$bg-grey1 : $gray1;
+
+/* Border - color setting */
+$bd-black : $black;
+$bd-grey1 : $gray1;
+
+/* Font - color setting */
+$txt-black : $black;
+$txt-grey1 : $gray1;
+
+/* Input - color setting */
+$inp-bd-base : #a9a9a9;
+
+/* Button - color setting */
+$btn-black : $black;
+
+/**
+ * BASE SETTING
+ */
+$base-font : $malgun;
+$base-font-size : 14px;
+$base-font-color : $txt-grey1;
+
+$normal : 300;
+$bold : 500;
+
